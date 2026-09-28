@@ -1,0 +1,73 @@
+/* ============================================
+   Responsive Overrides (additive only)
+   Tailwind utilities handle most responsive needs.
+   This file only covers global base tweaks.
+   ============================================ */
+
+/* Extra Small Devices (below 640px) */
+@media (max-width: 639px) {
+  body {
+    font-size: 14px;
+  }
+
+  /* Larger tap targets on mobile — helps with touch accuracy */
+  button,
+  a[role='button'],
+  input[type='submit'],
+  input[type='button'] {
+    min-height: 44px;
+  }
+}
+
+/* Small Devices (640px and up) */
+@media (min-width: 640px) {
+  body {
+    font-size: 15px;
+  }
+}
+
+/* Medium Devices (768px and up) */
+@media (min-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
+  /* Shift main content right to make room for the fixed sidebar */
+  main {
+    margin-left: 16rem;
+  }
+}
+
+/* Large Devices (1024px and up) */
+@media (min-width: 1024px) {
+  main {
+    margin-left: 16rem;
+  }
+}
+
+/* Extra Large (1280px and up) */
+@media (min-width: 1280px) {
+  /* Cap the widest content containers so lines don't get too long */
+  .max-w-7xl {
+    max-width: 1280px;
+  }
+}
+
+/* 2XL (1536px and up) */
+@media (min-width: 1536px) {
+  body {
+    font-size: 17px;
+  }
+}
+
+/* Landscape mobile — shrink vertical chrome so content fits */
+@media (max-height: 600px) and (orientation: landscape) {
+  header {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  main {
+    padding-top: 0.5rem;
+  }
+}

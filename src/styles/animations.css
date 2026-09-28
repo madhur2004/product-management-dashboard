@@ -1,0 +1,270 @@
+/* ==================== CORE ANIMATIONS ==================== */
+
+/* Fade — used for gentle appear/disappear */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Slide Down — used for dropdowns and toast entering from top */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideDown {
+  animation: slideDown 0.3s ease-in-out;
+}
+
+/* Scale Up — used when cards/panels appear */
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-scaleUp {
+  animation: scaleUp 0.3s ease-in-out;
+}
+
+/* Spinner — continuously rotating (loading indicator) */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Pulse — for skeleton loaders */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* ==================== PRODUCT IMAGE ZOOM ==================== */
+
+.image-zoom {
+  transition: transform 0.4s ease-in-out;
+}
+
+/* Slight zoom on hover — used on product details main image */
+.image-zoom:hover {
+  transform: scale(1.05);
+}
+
+/* ==================== WISHLIST HEART ==================== */
+
+/* Heartbeat — plays when a product is added to the wishlist */
+@keyframes heartBeat {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.3);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  75% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-heartBeat {
+  animation: heartBeat 0.4s ease-in-out;
+}
+
+/* ==================== TABLE ROW STAGGER ==================== */
+
+/* Row In — each table row fades in with a small delay (see animationDelay in JSX) */
+@keyframes rowIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-rowIn {
+  animation: rowIn 0.3s ease-in-out both;
+}
+
+/* ==================== EXTENDED ANIMATION SET ==================== */
+
+/* Slide Up — reverse of slideDown, for elements entering from bottom */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideUp {
+  animation: slideUp 0.3s ease-in-out both;
+}
+
+/* Scale Down — used when closing / hiding something */
+@keyframes scaleDown {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+.animate-scaleDown {
+  animation: scaleDown 0.3s ease-in-out both;
+}
+
+/* Bounce — subtle vertical bob, e.g. empty-state icon */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.animate-bounce {
+  animation: bounce 1s ease-in-out infinite;
+}
+
+/* Shake — used on form inputs when validation fails */
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+.animate-shake {
+  animation: shake 0.3s ease-in-out;
+}
+
+/* Ripple — expands from click position on Button */
+@keyframes ripple {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(20);
+    opacity: 0;
+  }
+}
+
+/* Slide Left — enter from the right side */
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slideLeft {
+  animation: slideLeft 0.3s ease-in-out both;
+}
+
+/* Slide Right — enter from the left side */
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slideRight {
+  animation: slideRight 0.3s ease-in-out both;
+}
+
+/* Glow — pulsing shadow, optional for primary CTAs */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 18px rgba(59, 130, 246, 0.7);
+  }
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* Stagger — fade + slide for lists that need sequential reveal */
+@keyframes staggerFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-stagger {
+  animation: staggerFadeIn 0.3s ease-in-out both;
+}
+
+/* ==================== ACCESSIBILITY ==================== */
+
+/* Respect user's reduced-motion preference — nearly disable all motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

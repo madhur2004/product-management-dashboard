@@ -1,0 +1,16 @@
+/* Custom cursor — small blue dot for the default pointer.
+   Data URI keeps it inline so no extra asset file is needed.
+   The `6 6` after the URL is the hotspot (tip position) of the cursor. */
+* {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="6" cy="6" r="3" fill="%233b82f6"/></svg>') 6 6, auto;
+}
+
+/* Larger purple dot for clickable elements — visually signals "clickable" */
+button, a, [role="button"], input[type="button"], input[type="submit"] {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="6" cy="6" r="4" fill="%238b5cf6"/></svg>') 6 6, pointer;
+}
+
+/* Text cursor for form fields — standard I-beam for typing */
+input, textarea, select {
+  cursor: text;
+}

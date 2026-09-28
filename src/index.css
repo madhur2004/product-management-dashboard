@@ -1,0 +1,14 @@
+/* Global CSS entry point.
+   Import order matters:
+   1. Custom stylesheets first (they use standard CSS and can't be re-ordered by Tailwind)
+   2. Tailwind directives last so utility classes can override custom styles when needed */
+
+@import './styles/globals.css';
+@import './styles/animations.css';
+@import './styles/cursor.css';
+@import './styles/responsive.css';
+
+/* Tailwind layers — base resets, component classes, then utility classes */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
